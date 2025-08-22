@@ -1,7 +1,10 @@
 import { Personagem } from "./Personagem";
+import prompt from "prompt-sync";
 
-const p: Personagem = new Personagem();
-p.nome = "Édecio";
+const teclado = prompt();
+
+const p: Personagem = new Personagem("Edécio");
+p.nome = "Edécio"
 p.classe = "Monge";
 p.raca = "Lith";
 p.nivel = Math.floor(1 + Math.random() * 99);
@@ -12,4 +15,35 @@ p.vidaMax = 100;
 p.vidaAtual = p.vidaMax;
 p.poderAtaque = 1;
 
-console.table(p);
+
+while(true){
+
+console.log("+-------------MENU-------------+");
+console.log("|1. Treinar Poder de Ataque    |");
+console.log("|2. Ver Status                 |");
+console.log("|9. Sair                       |");
+console.log("+------------------------------+");
+
+const escolha: number = +teclado("Escolha um opção do menu:")
+
+if (escolha === 9){
+    break;
+}
+
+switch (escolha) {
+    case 1:
+        treinarPoderAtaque(p);
+        break;
+    case 2:
+        console.table(p)
+        break;
+    default:
+        console.log("Opção inválida!")
+        break;
+}
+}
+
+
+function treinarPoderAtaque(person: Personagem): void{
+   person.treinarPoderAtaque();
+}
