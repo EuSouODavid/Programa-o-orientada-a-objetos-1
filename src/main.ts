@@ -18,11 +18,12 @@ p.poderAtaque = 1;
 
 while(true){
 
-console.log("+-------------MENU-------------+");
-console.log("|1. Treinar Poder de Ataque    |");
-console.log("|2. Ver Status                 |");
-console.log("|9. Sair                       |");
-console.log("+------------------------------+");
+console.log("+---------------MENU---------------+");
+console.log("|1. Treinar Poder de Ataque        |");
+console.log("|2. Ver Status                     |");
+console.log("|3. Checar se personagem vive      |");
+console.log("|9. Sair                           |");
+console.log("+------------------------------    +");
 
 const escolha: number = +teclado("Escolha um opção do menu:")
 
@@ -37,6 +38,15 @@ switch (escolha) {
     case 2:
         console.table(p)
         break;
+        case 3:
+            console.log(p.estaVivo()? "Personagem vivo" : "You Died")
+    //                 outra forma de fazer o mesmo
+    //
+    //         if(p.estaVivo()){
+    //             console.log("Personagem vivo")
+    //         }else{
+    //             console.log("You Died")
+    //         }
     default:
         console.log("Opção inválida!")
         break;
