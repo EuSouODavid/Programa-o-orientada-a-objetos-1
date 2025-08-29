@@ -34,4 +34,8 @@ export class Personagem{
     estaVivo(){
         return(this.vidaAtual > 0)
         }
+
+        subirNivel(){
+            this.nivel = +1 //aarumar dps esta colocando o nivel em "1".         talvez colocar "nivel + 1" arrume
+         }
 }
